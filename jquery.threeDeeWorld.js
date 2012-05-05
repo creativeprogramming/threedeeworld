@@ -77,13 +77,11 @@
                         '    -webkit-perspective: 700;' +
                         '    -moz-perspective: 700;' +
                         '}' +
-                        ' ' +
                         '.threedeeworld-world {' +
                         '    position: absolute;' +
                         '    -webkit-transform-style: preserve-3d;' +
                         '    -moz-transform-style: preserve-3d;' +
                         '}' +
-                        ' ' +
                         '.threedeeworld-plane {' +
                         '    position: absolute;' +
                         '    -webkit-transform-origin: 0 0 0;' +
