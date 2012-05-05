@@ -154,16 +154,16 @@
                             var $t = $(this);
 
                             if (e.keyCode === 13) {
-                                executeSearch($t.val());
+                                // TODO - search animation (and callback?)
                             }
 
                             setTimeout(function(){
                                 // TODO - dynamic letter spacing and input width calculation here please?
-                                var ammount = Math.min(($t.val().length - 10) * 2, 20);
+                                var amount = Math.min(($t.val().length - 10) * 2, 20);
 
                                 plane.animator.animate({
                                     props1: { 'rotation.y': 0 },
-                                    props2: { 'rotation.y': ammount },
+                                    props2: { 'rotation.y': amount },
                                     props3: { 'rotation.y': 0 }
                                 });
 
