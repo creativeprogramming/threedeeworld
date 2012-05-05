@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>3d World Example</title>
+    <style type="text/css">
+
+
+        .threedeeworld-viewport {
+            position:relative;
+            float:left;
+            overflow: hidden;
+            width:100%;
+            height:100%;
+            -webkit-perspective: 700;
+            -moz-perspective: 700;
+        }
+
+        .threedeeworld-world {
+            position: absolute;
+            /*
+            left: 50%;
+            top: 50%;
+            margin-left: -50%
+            */
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+        }
+
+        .threedeeworld-plane {
+            position: absolute;
+            -webkit-transform-origin: 0 0 0;
+            -webkit-backface-visibility: hidden;
+            -moz-transform-origin: 0 0 0;
+            -moz-backface-visibility: hidden;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="example.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../jquery.threeDeeWorld.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            if (location.href.split('#nothreedee').length === 2) return;
+
+            $('#viewport').threeDeeWorld({
+                worldSelector: '#world',
+                threeDeeSelector: 'h1, li, input',
+                clickAnimationTypes: ['li', 'input']
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="viewport">
+        <div id="world">
+            <h1>Header</h1>
+            <input type="text" placholder="Search here..." />
+            <ul>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
