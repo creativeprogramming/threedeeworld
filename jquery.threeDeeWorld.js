@@ -50,6 +50,8 @@
                     options.worldHeight = parseInt($el.outerHeight(), 10);
                 }
 
+                $el[pluginName]('setupStyles');
+
                 $el[pluginName]('initPlanes');
                 $el[pluginName]('initWorld');
                 $el[pluginName]('initAnimations');
@@ -57,6 +59,40 @@
 
                 options.viewport.camera.update();
             });
+        },
+
+        setupStyles: function() {
+            if (!$('#threedeeworld-styles').length) {
+                $('head').append('' +
+                    '<style id="threedeeworld-styles" type="text/css">' +
+                        '.threedeeworld-viewport {' +
+                        '    position:relative;' +
+                        '    float:left;' +
+                        '    overflow: hidden;' +
+                        '    width:100%;' +
+                        '    height:100%;' +
+                        '    -webkit-perspective: 700;' +
+                        '    -moz-perspective: 700;' +
+                        '}' +
+                        ' ' +
+                        '.threedeeworld-world {' +
+                        '    position: absolute;' +
+                        '    -webkit-transform-style: preserve-3d;' +
+                        '    -moz-transform-style: preserve-3d;' +
+                        '}' +
+                        ' ' +
+                        '.threedeeworld-plane {' +
+                        '    position: absolute;' +
+                        '    -webkit-transform-origin: 0 0 0;' +
+                        '    -webkit-backface-visibility: hidden;' +
+                        '    -moz-transform-origin: 0 0 0;' +
+                        '    -moz-backface-visibility: hidden;' +
+                        '}' +
+                    '</style>' +
+                '');
+            }
+
+            return $(this);
         },
 
         initWorld: function() {
