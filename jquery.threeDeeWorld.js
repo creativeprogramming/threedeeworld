@@ -174,7 +174,8 @@
 
                 if ($.inArray(type, options.clickAnimationTypes) > -1) {
                     plane.$node
-                        .mousedown(function(e){
+                        // TODO - try jQuery mobile's vmousedown here
+                        .bind('mousedown touchstart', function(e){
                             var $t = $(this),
                                 x = e.pageX - $t.offset().left,
                                 y = e.pageY - $t.offset().top,
