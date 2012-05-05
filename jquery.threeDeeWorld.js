@@ -65,6 +65,9 @@
             if (!$('#threedeeworld-styles').length) {
                 $('head').append('' +
                     '<style id="threedeeworld-styles" type="text/css">' +
+                        'html, body {' +
+                        '    height: 100%;' + // TODO - evaluate if there is an alternative to this
+                        '}' +
                         '.threedeeworld-viewport {' +
                         '    position:relative;' +
                         '    float:left;' +
